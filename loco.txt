@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시험날까지</title>
+</head>
+<body>
+    
+    <script>
+        const body = document.querySelector("body");
+const timer = document.createElement("h2");
+const title = document.createElement("h1");
+body.prepend(timer);
+body.prepend(title);
+
+function getTime() {
+  const target = new Date("2022-06-27 00:00:00+0900");
+  const today = new Date();
+  const gap = target - today;
+  const d = Math.floor(gap / (1000 * 60 * 60 * 24)); // 일
+  const h = Math.floor((gap / (1000 * 60 * 60)) % 24); // 시
+  const m = Math.floor(((gap / 1000) * 60) % 60); // 분
+  const s = Math.floor((gap / 1000) % 60); // 초
+  if (gap <= 0) {
+    title.innerText = "당일입니다.";
+    timer.innerText = "";
+  } else {
+    title.innerText = "시험날까지";
+    timer.innerText = `${d}일 ${h}시간 ${m}분 ${s}초 남았습니다.`;
+  }
+}
+
+function init() {
+  getTime();
+  setInterval(getTime, 1000);
+}
+init();
+    </script>
+</body>
+</html>

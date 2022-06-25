@@ -23,7 +23,7 @@ function getTime() {
   const m = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60)); // 분
   const s = Math.floor((gap / 1000) % 60); // 초
   if (gap <= 0) {
-    title.innerText = "당일입니다.";
+    title.innerText = "시험시작!<br>모두들 화이팅";
     timer.innerText = "";
   } else {
     title.innerText = "시험날까지";

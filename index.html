@@ -15,7 +15,7 @@ body.prepend(timer);
 body.prepend(title);
 
 function getTime() {
-  const target = new Date("2022/06/27 10:15:00");
+  const target = new Date("2022/10/04 10:15:00");
   const today = new Date();
   const gap = target - today;
   const d = Math.floor(gap / (1000 * 60 * 60 * 24)); // 일
@@ -23,10 +23,10 @@ function getTime() {
   const m = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60)); // 분
   const s = Math.floor((gap / 1000) % 60); // 초
   if (gap <= 0) {
-    title.innerText = "시험시작!<br>모두들 화이팅";
+    title.innerText = "시험시작!\n모두들 화이팅";
     timer.innerText = "";
   } else {
-    title.innerText = "시험까지";
+    title.innerText = "중간고사까지";
     timer.innerText = `${d}일 ${h}시간 ${m}분 ${s}초 남았습니다.`;
   }
 }
